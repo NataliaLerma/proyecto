@@ -1,0 +1,16 @@
+<!--templates/home.html-->
+{% extends 'base.html' %}
+{% block content %}
+	{% for post in object_list %}
+	<div class="post-entry">
+		
+<hr width="100%" color="red"/>
+<br>
+		<h2><a href="{% url 'post_detail' post.pk %}">{{post.title}}</a></h2>
+			<p>{{post.body}}</p>
+		<button type="button" class="btn btn-info"><a href="{% url 'post_delete' post.pk %}">Borrar</a>
+		<button type="button" class="btn btn-info"><a href="{% url 'post_edit' post.pk %}">Editar</a>
+		</div>
+<br>
+	{% endfor %}
+{% endblock content%}

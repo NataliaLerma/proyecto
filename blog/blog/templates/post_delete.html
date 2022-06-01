@@ -1,0 +1,12 @@
+<!--templates/post_delete.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+<hr width="100%" color="red"/>
+	<h1>Borrar post</h1>
+	<form action="" method="post">{% csrf_token %}
+	<p>¿Esta seguro de borrar "{{post.title}}"?</p>
+	<input type="submit" value="borrar">
+	</form>
+	
+{% endblock content %}
